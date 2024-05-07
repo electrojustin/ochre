@@ -3,7 +3,7 @@ import parmed
 import math
 
 amber_type_idx = {}
-with open('/home/justin/amber/amber22/dat/leap/parm/parm14ipq.dat', 'r') as in_file:
+with open('parm14ipq.dat', 'r') as in_file:
   in_file.readline()
   idx = 1 # reserve 0
   line = in_file.readline()
