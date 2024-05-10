@@ -27,8 +27,6 @@ amino_sym = {
 
 alignments = {}
 with open('alignment.csv', 'r') as align_file:
-  align_file.readline()  
-  align_file.readline()
   for row in align_file.readlines():
     if 'Consensus' in row:
       continue
@@ -41,8 +39,6 @@ with open('kras_data.csv', 'r') as manifest_file:
     parsed_row = row.strip().split('\t')
     pdb = parsed_row[0]
     chain = parsed_row[1]
-    if (pdb, chain) not in alignments:
-      continue
     label = float(parsed_row[2])
     seq = ''
     with open('pdbs/' + pdb + '.pdb', 'r') as pdb_file:

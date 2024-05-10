@@ -10,6 +10,10 @@ with open('can-22-0804_supplementary_datasets_s1-s4_suppsds1-sds4.csv', 'r') as 
         continue
       pdb = row[0]
       nuc_state = row[6]
+      inhibitor = row[17]
+      bound = row[8]
+      if inhibitor != 'None' or bound != 'None':
+        continue
       if nuc_state == '3P':
         is_active = True
       elif nuc_state == '2P':
