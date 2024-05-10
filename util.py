@@ -85,3 +85,8 @@ def embed_point_cloud(points, size, max_search_distance):
       return None
 
   return ret
+
+def rand_rotation():
+  ret = np.random.rand(3, 3)
+  ret, _, = np.linalg.qr(ret)
+  return ret
